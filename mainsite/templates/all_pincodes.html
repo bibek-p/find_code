@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block Bodyblock %}
+{% load static %}
+
+<!-- <div class="breadcrumb">
+    <div class="wrapper">
+        <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li><a href="/">All postcodes</a></li>
+            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <a itemprop="item" href="https://worldpostalcode.com/india/"><span itemprop="name">India</span></a>
+                <meta itemprop="position" content="1" />
+            </li>
+        </ul>
+    </div>
+</div> -->
+<div class="wrapper">
+    <div class="content short">
+
+        <h2>{{ bardcom_name }} Codes</h2>
+
+        <div class="codes">
+            <div class="letter_container" id="letter_b" style="display: block;">
+                <div class="units">
+                    {% for pincode in pincodes %}
+                    <div class="unit">
+                        <div class="container">
+                            
+                            <div class="place"><a style= "color: black;" href="/region/{{ pincode.url }}">{{ pincode.Place_Name }}</a></div>
+                            <div class="code"><span>{{ pincode.Postal_Code }}</span></div>
+                            
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+        {{ seo_content|safe }}
+
+
+    </div>
+
+
+    <!-- <div class="sidebar">
+        <h2>Popular Codes</h2>
+        <div class="sidebar_links">
+            <div><span class="flag flag-ar"></span> <a href="/argentina/" title="Argentina Postal Codes">Argentina</a>
+            </div>
+            <div><span class="flag flag-au"></span> <a href="/australia/" title="Australia Postal Codes">Australia</a>
+            </div>
+            <div><span class="flag flag-br"></span> <a href="/brazil/" title="Brazil Postal Codes">Brazil</a></div>
+            <div><span class="flag flag-kh"></span> <a href="/cambodia/" title="Cambodia Postal Codes">Cambodia</a>
+            </div>
+            <div><span class="flag flag-ca"></span> <a href="/canada/" title="Canada Postal Codes">Canada</a></div>
+            <div><span class="flag flag-cl"></span> <a href="/chile/" title="Chile Postal Codes">Chile</a></div>
+            <div><span class="flag flag-cn"></span> <a href="/china/" title="China Postal Codes">China</a></div>
+            <div><span class="flag flag-co"></span> <a href="/colombia/" title="Colombia Postal Codes">Colombia</a>
+            </div>
+            <div><span class="flag flag-fr"></span> <a href="/france/" title="France Postal Codes">France</a></div>
+            <div><span class="flag flag-de"></span> <a href="/germany/" title="Germany Postal Codes">Germany</a></div>
+            <div><span class="flag flag-hk"></span> <a href="/hong-kong/" title="Hong Kong Postal Codes">Hong Kong</a>
+            </div>
+            <div><span class="flag flag-in"></span> <a href="/india/" title="India Postal Codes">India</a></div>
+            <div><span class="flag flag-ie"></span> <a href="/ireland/" title="Ireland Postal Codes">Ireland</a></div>
+            <div><span class="flag flag-il"></span> <a href="/israel/" title="Israel Postal Codes">Israel</a></div>
+            <div><span class="flag flag-jm"></span> <a href="/jamaica/" title="Jamaica Postal Codes">Jamaica</a></div>
+            <div><span class="flag flag-jp"></span> <a href="/japan/" title="Japan Postal Codes">Japan</a></div>
+            <div><span class="flag flag-jo"></span> <a href="/jordan/" title="Jordan Postal Codes">Jordan</a></div>
+            <div><span class="flag flag-kw"></span> <a href="/kuwait/" title="Kuwait Postal Codes">Kuwait</a></div>
+            <div><span class="flag flag-my"></span> <a href="/malaysia/" title="Malaysia Postal Codes">Malaysia</a>
+            </div>
+            <div><span class="flag flag-mt"></span> <a href="/malta/" title="Malta Postal Codes">Malta</a></div>
+            <div><span class="flag flag-nl"></span> <a href="/netherlands/"
+                    title="Netherlands Postal Codes">Netherlands</a></div>
+            <div><span class="flag flag-ph"></span> <a href="/philippines/"
+                    title="Philippines Postal Codes">Philippines</a></div>
+            <div><span class="flag flag-lk"></span> <a href="/sri-lanka/" title="Sri Lanka Postal Codes">Sri Lanka</a>
+            </div>
+            <div><span class="flag flag-se"></span> <a href="/sweden/" title="Sweden Postal Codes">Sweden</a></div>
+            <div><span class="flag flag-ch"></span> <a href="/switzerland/"
+                    title="Switzerland Postal Codes">Switzerland</a></div>
+            <div><span class="flag flag-th"></span> <a href="/thailand/" title="Thailand Postal Codes">Thailand</a>
+            </div>
+            <div><span class="flag flag-tr"></span> <a href="/turkey/" title="Turkey Postal Codes">Turkey</a></div>
+            <div><span class="flag flag-gb"></span> <a href="/united-kingdom/"
+                    title="United Kingdom Postal Codes">United Kingdom</a></div>
+            <div><span class="flag flag-us"></span> <a href="/united-states/" title="United States Postal Codes">United
+                    States</a></div>
+            <div><span class="flag flag-vn"></span> <a href="/vietnam/" title="Vietnam Postal Codes">Vietnam</a></div>
+        </div>
+        <a href="/" class="all_countries">More countries</a>
+    </div> -->
+</div>
+
+
+
+{% endblock Bodyblock %}

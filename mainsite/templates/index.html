@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% block Bodyblock %}
+{% load static %}
+   <div class="wrapper">
+      <div class="content long">
+         <h1>World <span>Zip/Postal</span> Code</h1>
+         <h2>North America & Caribbean</h2>
+         <div class="regions">
+            <div><span class="flag flag-ca"></span> <a href="/region/CA/" title="Canada Postal Codes">Canada</a></div>
+            <!-- <div><span class="flag flag-cu"></span> <a href="/region/CU/" title="Cuba Postal Codes">Cuba</a></div> -->
+            <div><span class="flag flag-gl"></span> <a href="/region/GL/" title="Greenland Postal Codes">Greenland</a></div>
+            <div><span class="flag flag-gp"></span> <a href="/region/GP/" title="Guadeloupe Postal Codes">Guadeloupe</a></div>
+            <div><span class="flag flag-gt"></span> <a href="/region/GT/" title="Guatemala Postal Codes">Guatemala</a></div>
+            <div><span class="flag flag-ht"></span> <a href="/region/HT/" title="Haiti Postal Codes">Haiti</a></div>
+            <div><span class="flag flag-mq"></span> <a href="/region/MQ/" title="Martinique Postal Codes">Martinique</a></div>
+            <div><span class="flag flag-mx"></span> <a href="/region/MX/" title="Mexico Postal Codes">Mexico</a></div>
+            <div><span class="flag flag-pr"></span> <a href="/region/PR/" title="Puerto Rico Postal Codes">Puerto Rico</a></div>
+            <div><span class="flag flag-us"></span> <a href="/region/US/" title="United States Postal Codes">United States</a></div>
+            <div><span class="flag flag-vi"></span> <a href="/region/VI/" title="Virgin Islands, U.S. Postal Codes">Virgin Islands, U.S.</a></div>
+         </div>
+         <div style="clear:both"></div>
+         <h2>South America</h2>
+         <div class="regions">
+            <div><span class="flag flag-ar"></span> <a href="/region/AR/" title="Argentina Postal Codes">Argentina</a></div>
+            <div><span class="flag flag-br"></span> <a href="/region/BR/" title="Brazil Postal Codes">Brazil</a></div>
+            <div><span class="flag flag-cl"></span> <a href="/region/CL/" title="Chile Postal Codes">Chile</a></div>
+            <div><span class="flag flag-co"></span> <a href="/region/CO/" title="Colombia Postal Codes">Colombia</a></div>
+            <!-- <div><span class="flag flag-ec"></span> <a href="/region/EC/" title="Ecuador Postal Codes">Ecuador</a></div> -->
+            <div><span class="flag flag-gf"></span> <a href="/region/GF/" title="French Guiana Postal Codes">French Guiana</a></div>
+            <!-- <div><span class="flag flag-py"></span> <a href="/region/PY/" title="Paraguay Postal Codes">Paraguay</a></div> -->
+            <div><span class="flag flag-pe"></span> <a href="/region/PE/" title="Peru Postal Codes">Peru</a></div>
+            <div><span class="flag flag-uy"></span> <a href="/region/UY/" title="Uruguay Postal Codes">Uruguay</a></div>
+            <!-- <div><span class="flag flag-ve"></span> <a href="/region/VE/" title="Venezuela Postal Codes">Venezuela</a></div> -->
+         </div>
+         <div style="clear:both"></div>
+         <h2>Europa</h2>
+         <div class="regions">
+            <!-- <div><span class="flag flag-al"></span> <a href="/region/AL/" title="Albania Postal Codes">Albania</a></div> -->
+            <div><span class="flag flag-ad"></span> <a href="/region/AD/" title="Andorra Postal Codes">Andorra</a></div>
+            <div><span class="flag flag-at"></span> <a href="/region/AT/" title="Austria Postal Codes">Austria</a></div>
+            <div><span class="flag flag-by"></span> <a href="/region/BY/" title="Belarus Postal Codes">Belarus</a></div>
+            <div><span class="flag flag-be"></span> <a href="/region/BE/" title="Belgium Postal Codes">Belgium</a></div>
+            <div><span class="flag flag-bg"></span> <a href="/region/BG/" title="Bulgaria Postal Codes">Bulgaria</a></div>
+            <div><span class="flag flag-hr"></span> <a href="/region/HR/" title="Croatia Postal Codes">Croatia</a></div>
+            <div><span class="flag flag-cy"></span> <a href="/region/CY/" title="Cyprus Postal Codes">Cyprus</a></div>
+            <div><span class="flag flag-cz"></span> <a href="/region/CZ/" title="Czech Republic Postal Codes">Czech Republic</a></div>
+            <div><span class="flag flag-dk"></span> <a href="/region/DK/" title="Denmark Postal Codes">Denmark</a></div>
+            <div><span class="flag flag-ee"></span> <a href="/region/EE/" title="Estonia Postal Codes">Estonia</a></div>
+            <div><span class="flag flag-fo"></span> <a href="/region/FO/" title="Faroe Islands Postal Codes">Faroe Islands</a></div>
+            <div><span class="flag flag-fi"></span> <a href="/region/FI/" title="Finland Postal Codes">Finland</a></div>
+            <div><span class="flag flag-fr"></span> <a href="/region/FR/" title="France Postal Codes">France</a></div>
+            <div><span class="flag flag-de"></span> <a href="/region/DE/" title="Germany Postal Codes">Germany</a></div>
+            <!-- <div><span class="flag flag-gi"></span> <a href="/region/GI/" title="Gibraltar Postal Codes">Gibraltar</a></div> -->
+            <!-- <div><span class="flag flag-gr"></span> <a href="/region/GR/" title="Greece Postal Codes">Greece</a></div> -->
+            <div><span class="flag flag-gg"></span> <a href="/region/GG/" title="Guernsey Postal Codes">Guernsey</a></div>
+            <div><span class="flag flag-hu"></span> <a href="/region/HU/" title="Hungary Postal Codes">Hungary</a></div>
+            <div><span class="flag flag-is"></span> <a href="/region/IS/" title="Iceland Postal Codes">Iceland</a></div>
+            <div><span class="flag flag-ie"></span> <a href="/region/IE/" title="Ireland Postal Codes">Ireland</a></div>
+            <div><span class="flag flag-im"></span> <a href="/region/IM/" title="Isle Of Man Postal Codes">Isle Of Man</a></div>
+            <div><span class="flag flag-it"></span> <a href="/region/IT/" title="Italy Postal Codes">Italy</a></div>
+            <div><span class="flag flag-je"></span> <a href="/region/JE/" title="Jersey Postal Codes">Jersey</a></div>
+            <div><span class="flag flag-lv"></span> <a href="/region/LV/" title="Latvia Postal Codes">Latvia</a></div>
+            <div><span class="flag flag-li"></span> <a href="/region/LI/" title="Liechtenstein Postal Codes">Liechtenstein</a></div>
+            <div><span class="flag flag-lt"></span> <a href="/region/LT/" title="Lithuania Postal Codes">Lithuania</a></div>
+            <div><span class="flag flag-lu"></span> <a href="/region/LU/" title="Luxembourg Postal Codes">Luxembourg</a></div>
+            <div><span class="flag flag-mk"></span> <a href="/region/MK/" title="Macedonia Postal Codes">Macedonia</a></div>
+            <div><span class="flag flag-mt"></span> <a href="/region/MT/" title="Malta Postal Codes">Malta</a></div>
+            <div><span class="flag flag-md"></span> <a href="/region/MD/" title="Moldova Postal Codes">Moldova</a></div>
+            <div><span class="flag flag-mc"></span> <a href="/region/MC/" title="Monaco Postal Codes">Monaco</a></div>
+            <!-- <div><span class="flag flag-me"></span> <a href="/region/ME/" title="Montenegro Postal Codes">Montenegro</a></div> -->
+            <div><span class="flag flag-nl"></span> <a href="/region/NL/" title="Netherlands Postal Codes">Netherlands</a></div>
+            <div><span class="flag flag-no"></span> <a href="/region/NO/" title="Norway Postal Codes">Norway</a></div>
+            <div><span class="flag flag-pl"></span> <a href="/region/PL/" title="Poland Postal Codes">Poland</a></div>
+            <div><span class="flag flag-pt"></span> <a href="/region/PT/" title="Portugal Postal Codes">Portugal</a></div>
+            <div><span class="flag flag-ro"></span> <a href="/region/RO/" title="Romania Postal Codes">Romania</a></div>
+            <div><span class="flag flag-ru"></span> <a href="/region/RU/" title="Russian Federation Postal Codes">Russia</a></div>
+            <div><span class="flag flag-sm"></span> <a href="/region/SM/" title="San Marino Postal Codes">San Marino</a></div>
+            <div><span class="flag flag-rs"></span> <a href="/region/RS/" title="Serbia Postal Codes">Serbia</a></div>
+            <div><span class="flag flag-sk"></span> <a href="/region/SK/" title="Slovakia Postal Codes">Slovakia</a></div>
+            <div><span class="flag flag-si"></span> <a href="/region/SI/" title="Slovenia Postal Codes">Slovenia</a></div>
+            <div><span class="flag flag-es"></span> <a href="/region/ES/" title="Spain Postal Codes">Spain</a></div>
+            <div><span class="flag flag-se"></span> <a href="/region/SE/" title="Sweden Postal Codes">Sweden</a></div>
+            <div><span class="flag flag-ch"></span> <a href="/region/CH/" title="Switzerland Postal Codes">Switzerland</a></div>
+            <div><span class="flag flag-ua"></span> <a href="/region/UA/" title="Ukraine Postal Codes">Ukraine</a></div>
+            <div><span class="flag flag-gb"></span> <a href="/region/GB/" title="United Kingdom Postal Codes">United Kingdom</a></div>
+            <div><span class="flag flag-va"></span> <a href="/region/VA/" title="Vatican Postal Codes">Vatican</a></div>
+         </div>
+         <div style="clear:both"></div>
+         <h2>Asia</h2>
+         <div class="regions">
+            <!-- <div><span class="flag flag-af"></span> <a href="/region/AF/" title="Afghanistan Postal Codes">Afghanistan</a></div>
+            <div><span class="flag flag-am"></span> <a href="/region/AM/" title="Armenia Postal Codes">Armenia</a></div>
+            <div><span class="flag flag-bh"></span> <a href="/region/BH/" title="Bahrain Postal Codes">Bahrain</a></div> -->
+            <div><span class="flag flag-bd"></span> <a href="/region/BD/" title="Bangladesh Postal Codes">Bangladesh</a></div>
+            <!-- <div><span class="flag flag-kh"></span> <a href="/region/KH/" title="Cambodia Postal Codes">Cambodia</a></div>
+            <div><span class="flag flag-cn"></span> <a href="/region/CN/" title="China Postal Codes">China</a></div>
+            <div><span class="flag flag-hk"></span> <a href="/region/HK/" title="Hong Kong Postal Codes">Hong Kong</a></div> -->
+            <div><span class="flag flag-in"></span> <a href="/region/IN/" title="India Postal Codes">India</a></div>
+            <!-- <div><span class="flag flag-id"></span> <a href="/region/ID/" title="Indonesia Postal Codes">Indonesia</a></div>
+            <div><span class="flag flag-ir"></span> <a href="/region/IR/" title="Iran Postal Codes">Iran</a></div>
+            <div><span class="flag flag-iq"></span> <a href="/region/IQ/" title="Iraq Postal Codes">Iraq</a></div>
+            <div><span class="flag flag-il"></span> <a href="/region/IL/" title="Israel Postal Codes">Israel</a></div> -->
+            <div><span class="flag flag-jp"></span> <a href="/region/JP/" title="Japan Postal Codes">Japan</a></div>
+            <!-- <div><span class="flag flag-jo"></span> <a href="/region/JO/" title="Jordan Postal Codes">Jordan</a></div>
+            <div><span class="flag flag-kz"></span> <a href="/region/KZ/" title="Kazakhstan Postal Codes">Kazakhstan</a></div>
+            <div><span class="flag flag-kw"></span> <a href="/region/KW/" title="Kuwait Postal Codes">Kuwait</a></div>
+            <div><span class="flag flag-lb"></span> <a href="/region/LB/" title="Lebanon Postal Codes">Lebanon</a></div> -->
+            <div><span class="flag flag-my"></span> <a href="/region/MY/" title="Malaysia Postal Codes">Malaysia</a></div>
+            <!-- <div><span class="flag flag-mv"></span> <a href="/region/MV/" title="Maldives Postal Codes">Maldives</a></div>
+            <div><span class="flag flag-mn"></span> <a href="/region/MN/" title="Mongolia Postal Codes">Mongolia</a></div>
+            <div><span class="flag flag-np"></span> <a href="/region/NP/" title="Nepal Postal Codes">Nepal</a></div>
+            <div><span class="flag flag-om"></span> <a href="/region/OM/" title="Oman Postal Codes">Oman</a></div> -->
+            <div><span class="flag flag-pk"></span> <a href="/region/PK/" title="Pakistan Postal Codes">Pakistan</a></div>
+            <div><span class="flag flag-ph"></span> <a href="/region/PH/" title="Philippines Postal Codes">Philippines</a></div>
+            <!-- <div><span class="flag flag-qa"></span> <a href="/region/QA/" title="Qatar Postal Codes">Qatar</a></div> -->
+            <div><span class="flag flag-sg"></span> <a href="/region/SG/" title="Singapore Postal Codes">Singapore</a></div>
+            <div><span class="flag flag-lk"></span> <a href="/region/LK/" title="Sri Lanka Postal Codes">Sri Lanka</a></div>
+            <!-- <div><span class="flag flag-tw"></span> <a href="/region/TW/" title="Taiwan Postal Codes">Taiwan</a></div> -->
+            <div><span class="flag flag-th"></span> <a href="/region/TH/" title="Thailand Postal Codes">Thailand</a></div>
+            <div><span class="flag flag-tr"></span> <a href="/region/TR/" title="Turkey Postal Codes">Turkey</a></div>
+            <!-- <div><span class="flag flag-ae"></span> <a href="/region/AE/" title="United Arab Emirates Postal Codes">UAE</a></div>
+            <div><span class="flag flag-vn"></span> <a href="/region/VN/" title="Vietnam Postal Codes">Vietnam</a></div> -->
+         </div>
+         <div style="clear:both"></div>
+         <h2>Oceania</h2>
+         <div class="regions">
+            <div><span class="flag flag-as"></span> <a href="/region/AS/" title="American Samoa Postal Codes">American Samoa</a></div>
+            <div><span class="flag flag-au"></span> <a href="/region/AU/" title="Australia Postal Codes">Australia</a></div>
+            <!-- <div><span class="flag flag-fj"></span> <a href="/region/FJ/" title="Fiji Postal Codes">Fiji</a></div> -->
+            <div><span class="flag flag-gu"></span> <a href="/region/GU/" title="Guam Postal Codes">Guam</a></div>
+            <div><span class="flag flag-mh"></span> <a href="/region/MH/" title="Marshall Islands Postal Codes">Marshall Islands</a></div>
+            <div><span class="flag flag-nz"></span> <a href="/region/NZ/" title="New Zealand Postal Codes">New Zealand</a></div>
+         </div>
+         <div style="clear:both"></div>
+         <h2>Africa</h2>
+         <div class="regions">
+            <div><span class="flag flag-dz"></span> <a href="/region/DZ/" title="Algeria Postal Codes">Algeria</a></div>
+            <!-- <div><span class="flag flag-cm"></span> <a href="/region/CM/" title="Cameroon Postal Codes">Cameroon</a></div>
+            <div><span class="flag flag-eg"></span> <a href="/region/EG/" title="Egypt Postal Codes">Egypt</a></div>
+            <div><span class="flag flag-gh"></span> <a href="/region/GH/" title="Ghana Postal Codes">Ghana</a></div> -->
+            <!-- <div><span class="flag flag-ke"></span> <a href="/region/KE/" title="Kenya Postal Codes">Kenya</a></div> -->
+            <!-- <div><span class="flag flag-mu"></span> <a href="/region/MU/" title="Mauritius Postal Codes">Mauritius</a></div> -->
+            <div><span class="flag flag-yt"></span> <a href="/region/YT/" title="Mayotte Postal Codes">Mayotte</a></div>
+            <!-- <div><span class="flag flag-ma"></span> <a href="/region/MA/" title="Morocco Postal Codes">Morocco</a></div> -->
+            <!-- <div><span class="flag flag-ng"></span> <a href="/region/NG/" title="Nigeria Postal Codes">Nigeria</a></div> -->
+            <div><span class="flag flag-re"></span> <a href="/region/RE/" title="Reunion Postal Codes">Reunion</a></div>
+            <div><span class="flag flag-za"></span> <a href="/region/ZA/" title="South Africa Postal Codes">South Africa</a></div>
+            <!-- <div><span class="flag flag-tz"></span> <a href="/region/TZ/" title="Tanzania Postal Codes">Tanzania</a></div> -->
+            <!-- <div><span class="flag flag-tn"></span> <a href="/region/TN/" title="Tunisia Postal Codes">Tunisia</a></div> -->
+            <!-- <div><span class="flag flag-ug"></span> <a href="/region/UG/" title="Uganda Postal Codes">Uganda</a></div> -->
+            <!-- <div><span class="flag flag-zm"></span> <a href="/region/ZM/" title="Zambia Postal Codes">Zambia</a></div> -->
+            <!-- <div><span class="flag flag-zw"></span> <a href="/region/ZW/" title="Zimbabwe Postal Codes">Zimbabwe</a></div> -->
+         </div>
+         <div style="clear:both"></div>
+      </div>
+   </div>
+   {% endblock Bodyblock %}

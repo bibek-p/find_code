@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>World Postal Code - free zip/postal code lookup</title>
+    <meta name="Description"
+        content="Use our postal code lookup for every country around the world. Complete list of zip codes and all administrative divisions for countries.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/FwCA3z5eVqHy.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/uF5vNYMqw0us.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/lLOwpT0ObMEG.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="fonts/SxpRXVzNu6xS.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="D8cDvWX21DtL.ico">
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+    <link href="{% static 'css/flag.css' %}" rel="stylesheet">
+</head>
+<div class="header" style="background-image: url('https://worldpostalcode.com/images/bg-top.webp')">
+    <div class="wrapper header-top">
+        <div class="logo"><a id="logo_link" href="/">World <span>Postal Code</span></a></div>
+        <ul id="nav">
+            <li><a href="/what-is-my-zip-code">My zip code</a></li>
+            <li><a href="/zip-code-map">Zip code map</a></li>
+            <li><a href="/united-states/">US zip codes</a></li>
+            <li><a href="/canada/">Canada zip codes</a></li>
+            <li><a href="/united-kingdom/">UK postcodes</a></li>
+        </ul>
+        <div id="nav_toggle"></div>
+        <div id="nav_container"></div>
+    </div>
+    <div class="search">
+        <form >
+            <input type="button" value="Lookup" class="submit" onclick="serachpin()">
+            <input type="text" id="search" name="val" value class="field"
+                placeholder="Address, Country, City or Postal Code...">
+        </form>
+    </div>
+</div>
+
+{% block Bodyblock %} {% endblock Bodyblock %}
+<div class="notes">
+    <div class="wrapper">
+        <h2>How to find a Zip Code</h2>
+        <p>Finding the postal codes you need for your post is as simple as few clicks. First select your country of
+            choice to be taken to a list of the administrative divisions of that country. Then select the area where you
+            are trying to send your letter for a list of the available zip codes for that area.</p>
+        <p>Not sure of the country or the administrative division to choose? Or your country/region is missing in the
+            list? Try entering the address into the search at the top of the page to lookup the right code to use. Also
+            available, try using our country <a href="/map/">map</a> to find your needed zip/postal code.</p>
+    </div>
+</div>
+<div class="footer">
+    <div class="wrapper">
+        <div class="contacts">&copy; 2016-2020 WorldPostalCode <a href="/contacts/">Contact Us</a></div>
+        <div class="credits">
+            Postal code lists are compiled from <a href="http://www.geonames.org/" target="_blank">GeoNames</a>, free
+            sources and our own manually curated datasets.<br> Map geocoding by <a href="https://www.here.com/en"
+                target="_blank">HERE</a> (main source) and <a
+                href="https://operations.osmfoundation.org/policies/nominatim/" target="_blank">Nominatim (OSM)</a>
+            (additional, limited use). US boundaries by <a href="https://www.census.gov" target="_blank">Census
+                Bureau</a>
+        </div>
+    </div>
+</div>
+<a href="#" id="toTop" class="scroll" onClick="scrollToElem(window, 0, 40); return false;"><span id="toTopHover">
+    </span></a>
+
+<script>
+    function serachpin(){
+        pincode = document.getElementById('search').value;
+        pincode = pincode.split(" ").join("")
+        if (pincode != "" ){
+            window.location.href='/searchpin/'+pincode;
+        }
+    }
+</script>
+</html>

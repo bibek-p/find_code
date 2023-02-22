@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% block Bodyblock %}
+{% load static %}
+
+<style>
+    .uk-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.uk-margin-remove {
+  margin: 0 !important;
+}
+.uk-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+._pinTable.ifsc_table tr {
+  border-top: 1px solid #b3a7a7c2;
+}
+.uk-table tbody tr {
+  transition: background-color .1s linear;
+}
+
+.uk-table td {
+  padding: 16px 12px;
+  vertical-align: top;
+  font-size: 16px;
+}
+._pinTable.ifsc_table tr > td:nth-child(3) {
+  border-left: 1px solid #b3a7a7c2;
+  padding-left: 30px;
+  
+}
+@media only screen and (max-width: 600px) {
+    .mobile-details {
+    display: block !important;
+  }
+  .uk-table{
+      display: none !important;
+  }
+}
+</style>
+
+
+<div class="wrapper">
+    <div class="content short">
+
+        <h2>Pincode / Zipcode of {{ bardcom_name }}{% if pincode_details.0.District_Name_or_City_Name != 'BLANK_DATA' %}, 
+            {{ pincode_details.0.District_Name_or_City_Name }}{% endif %}{% if pincode_details.0.District_Name_or_City_Name != 'BLANK_DATA' %}, 
+            {{ pincode_details.0.State_Name  }}
+            {% endif %} 
+            is "{{ pincode_details.0.Postal_Code }}"</h2>
+
+        <div class="codes">
+
+            <table class="uk-table uk-table-divider ifsc_table uk-margin-remove _pinTable" >
+                <tbody>
+                    <tr>
+                        <td>Place Name</td>
+                        <td>{{ pincode_details.0.Place_Name }}</td>
+                        <td> District Name / City Name</td>
+                        <td>
+                            {% if pincode_details.0.District_Name_or_City_Name == 'BLANK_DATA' %} 
+                            Nill
+                            {% else %}
+                            {{ pincode_details.0.District_Name_or_City_Name }}
+                            {% endif %}
+                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Postal Code / Zip Code</td>
+                        <td>{{ pincode_details.0.Postal_Code }}</td>
+                        <td>State Name</td>
+                        <td>
+                            {% if pincode_details.0.State_Name == 'BLANK_DATA' %} 
+                            Nill
+                            {% else %}
+                            {{ pincode_details.0.State_Name }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Country Name</td>
+                        <td>{{ found_country.name }}</td>
+                        <td>Capital of {{ found_country.name }}</td>
+                        <td>{{ found_country.capital }}</td>
+                    </tr>
+                    <tr>
+                        <td>Country Code</td>
+                        <td>{{ found_country.code }}</td>
+                        <td>Currency Name</td>
+                        <td>{{ found_country.currency.name }}</td>
+                    </tr>
+                    <tr>
+                        <td> Language</td>
+                        <td>{{ found_country.language.name }}</td>
+                        <td> Currency Symbol</td>
+                        <td>{{ found_country.currency.symbol }}</td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+            
+            <div class="mobile-details" style="display: none">
+                <p> <b>Place Name :</b> {{ pincode_details.0.Place_Name }}</p>
+                <p><b>District Name / City Name :</b> {% if pincode_details.0.District_Name_or_City_Name == 'BLANK_DATA' %} 
+                    Nill
+                    {% else %}
+                    {{ pincode_details.0.District_Name_or_City_Name }}
+                    {% endif %}</p>
+                <p><b>Postal Code / Zip Code : </b>{{ pincode_details.0.Postal_Code }}</p>
+                <p><b>State Name :</b>  {% if pincode_details.0.State_Name == 'BLANK_DATA' %} 
+                    Nill
+                    {% else %}
+                    {{ pincode_details.0.State_Name }}
+                    {% endif %}</p>
+                <p><b>Country Name : </b>{{ found_country.name }}</p>
+                <p><b>Country Code : </b>{{ found_country.code }}</p>
+                <p><b>Capital of {{ found_country.name }} : </b>{{ found_country.capital }}</p>
+                <p><b>Language :</b> {{ found_country.language.name }}</p>
+                <p><b>Currency Name : </b>{{ found_country.currency.name }}</p>
+                <p><b>Currency Symbol : </b>{{ found_country.currency.symbol }}</p>
+
+
+            </div>
+
+            {{ seo_content|safe }}
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- <div class="sidebar">
+        <h2>Popular Codes</h2>
+        <div class="sidebar_links">
+            <div><span class="flag flag-ar"></span> <a href="/argentina/" title="Argentina Postal Codes">Argentina</a>
+            </div>
+            <div><span class="flag flag-au"></span> <a href="/australia/" title="Australia Postal Codes">Australia</a>
+            </div>
+            <div><span class="flag flag-br"></span> <a href="/brazil/" title="Brazil Postal Codes">Brazil</a></div>
+            <div><span class="flag flag-kh"></span> <a href="/cambodia/" title="Cambodia Postal Codes">Cambodia</a>
+            </div>
+            <div><span class="flag flag-ca"></span> <a href="/canada/" title="Canada Postal Codes">Canada</a></div>
+            <div><span class="flag flag-cl"></span> <a href="/chile/" title="Chile Postal Codes">Chile</a></div>
+            <div><span class="flag flag-cn"></span> <a href="/china/" title="China Postal Codes">China</a></div>
+            <div><span class="flag flag-co"></span> <a href="/colombia/" title="Colombia Postal Codes">Colombia</a>
+            </div>
+            <div><span class="flag flag-fr"></span> <a href="/france/" title="France Postal Codes">France</a></div>
+            <div><span class="flag flag-de"></span> <a href="/germany/" title="Germany Postal Codes">Germany</a></div>
+            <div><span class="flag flag-hk"></span> <a href="/hong-kong/" title="Hong Kong Postal Codes">Hong Kong</a>
+            </div>
+            <div><span class="flag flag-in"></span> <a href="/india/" title="India Postal Codes">India</a></div>
+            <div><span class="flag flag-ie"></span> <a href="/ireland/" title="Ireland Postal Codes">Ireland</a></div>
+            <div><span class="flag flag-il"></span> <a href="/israel/" title="Israel Postal Codes">Israel</a></div>
+            <div><span class="flag flag-jm"></span> <a href="/jamaica/" title="Jamaica Postal Codes">Jamaica</a></div>
+            <div><span class="flag flag-jp"></span> <a href="/japan/" title="Japan Postal Codes">Japan</a></div>
+            <div><span class="flag flag-jo"></span> <a href="/jordan/" title="Jordan Postal Codes">Jordan</a></div>
+            <div><span class="flag flag-kw"></span> <a href="/kuwait/" title="Kuwait Postal Codes">Kuwait</a></div>
+            <div><span class="flag flag-my"></span> <a href="/malaysia/" title="Malaysia Postal Codes">Malaysia</a>
+            </div>
+            <div><span class="flag flag-mt"></span> <a href="/malta/" title="Malta Postal Codes">Malta</a></div>
+            <div><span class="flag flag-nl"></span> <a href="/netherlands/"
+                    title="Netherlands Postal Codes">Netherlands</a></div>
+            <div><span class="flag flag-ph"></span> <a href="/philippines/"
+                    title="Philippines Postal Codes">Philippines</a></div>
+            <div><span class="flag flag-lk"></span> <a href="/sri-lanka/" title="Sri Lanka Postal Codes">Sri Lanka</a>
+            </div>
+            <div><span class="flag flag-se"></span> <a href="/sweden/" title="Sweden Postal Codes">Sweden</a></div>
+            <div><span class="flag flag-ch"></span> <a href="/switzerland/"
+                    title="Switzerland Postal Codes">Switzerland</a></div>
+            <div><span class="flag flag-th"></span> <a href="/thailand/" title="Thailand Postal Codes">Thailand</a>
+            </div>
+            <div><span class="flag flag-tr"></span> <a href="/turkey/" title="Turkey Postal Codes">Turkey</a></div>
+            <div><span class="flag flag-gb"></span> <a href="/united-kingdom/"
+                    title="United Kingdom Postal Codes">United Kingdom</a></div>
+            <div><span class="flag flag-us"></span> <a href="/united-states/" title="United States Postal Codes">United
+                    States</a></div>
+            <div><span class="flag flag-vn"></span> <a href="/vietnam/" title="Vietnam Postal Codes">Vietnam</a></div>
+        </div>
+        <a href="/" class="all_countries">More countries</a>
+    </div> -->
+</div>
+
+
+
+{% endblock Bodyblock %}
