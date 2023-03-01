@@ -164,3 +164,50 @@ def search_pincode(request,pincode):
         res = {"errormessage": "Pincode Not Found. Search A Valid Pincode."}
         return render(request,"return.html",res)
 
+def sitemap12122121(request):
+    res = all_pincodes.objects.order_by().values('Country_Code').distinct()
+
+    print(len(res),res[0]["Country_Code"])
+    countrylist =[]
+    for i in range(len(res)):
+       countrylist.append(res[i]["Country_Code"])
+    counter =0 
+    limit=30000
+    filecounter= 1
+    fistline =0
+    file_name = "sitemap"+str(filecounter)+".xml"
+    top = '''<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//toolsband.com/main-sitemap.xsl"?>
+        <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'''
+
+    for i in (countrylist):
+        rest = all_pincodes.objects.filter(Country_Code=i)
+        for j in range(len(rest)):
+            url = "https://globalpincode.org/region/"+i+"/"+rest[j].State_Name+"/"+rest[j].District_Name_or_City_Name+"/"+rest[j].District_Name_or_City_Name+"/pincode-or-zipcode"
+
+            text ='''<sitemap>
+                        <loc>'''+url+'''</loc>
+                        <lastmod>2023-02-14T06:18:47+00:00</lastmod>
+                    </sitemap>'''
+            if int(counter/limit) != 1:
+                f = open(file_name, "a")
+                if fistline ==0:
+                    text = top +text
+                    fistline= 1
+                f.write(text)
+                f.close()
+                counter= counter+1
+            else:
+                f = open(file_name, "a")
+                end="</sitemapindex>"
+                f.write(end)
+                f.close()
+                filecounter = filecounter+1
+                file_name = "sitemap"+str(filecounter)+".xml"
+                counter = 0 
+                fistline =0
+            
+
+    
+with open(r"/Users/bibekanandabhuyan/Projects/find_code/find_code/sitemap51.xml", 'r') as fp:
+    lines = len(fp.readlines())
+    print('Total Number of lines:', lines)
