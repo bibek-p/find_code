@@ -175,35 +175,41 @@ def sitemap22(request):
     limit=30000
     filecounter= 1
     fistline =0
-    file_name = "sitemap"+str(filecounter)+".xml"
-    top = '<?xml version="1.0" encoding="UTF-8"?>'
+    file_name = "static/sitemap/sitemap"+str(filecounter)+".xml"
+    top = '''<?xml version="1.0" encoding="UTF-8"?>
+            <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap>
+            '''
+    deup={}
 
     for i in (countrylist):
         rest = all_pincodes.objects.filter(Country_Code=i)
         for j in range(len(rest)):
-            url = "https://globalpincode.org/region/"+i+"/"+rest[j].State_Name.replace("+", " ")+"/"+rest[j].District_Name_or_City_Name.replace("+", " ")+"/"+rest[j].District_Name_or_City_Name.replace("+", " ")+"/pincode-or-zipcode"
+            url = "https://globalpincode.org/region/"+i+"/"+rest[j].State_Name.replace(" ", "+")+"/"+rest[j].District_Name_or_City_Name.replace(" ", "+")+"/"+rest[j].Place_Name.replace(" ", "+")+"/pincode-or-zipcode"
+            
+            if url not in deup:
+                deup[url] =""
 
-            text ='''<sitemap>
-                        <loc>'''+url+'''</loc>
-                        <lastmod>2023-02-14T06:18:47+00:00</lastmod>
-                    </sitemap>'''
-            if int(counter/limit) != 1:
-                f = open(file_name, "a")
-                if fistline ==0:
-                    text = top +text
-                    fistline= 1
-                f.write(text)
-                f.close()
-                counter= counter+1
-            else:
-                f = open(file_name, "a")
-                end="</sitemapindex>"
-                f.write(end)
-                f.close()
-                filecounter = filecounter+1
-                file_name = "sitemap"+str(filecounter)+".xml"
-                counter = 0 
-                fistline =0
+                text ='''<sitemap>
+                            <loc>'''+url+'''</loc>
+                            <lastmod>2023-02-14T06:18:47+00:00</lastmod>
+                        </sitemap>'''
+                if int(counter/limit) != 1:
+                    f = open(file_name, "a")
+                    if fistline ==0:
+                        text = top +text
+                        fistline= 1
+                    f.write(text)
+                    f.close()
+                    counter= counter+1
+                else:
+                    f = open(file_name, "a")
+                    end="</sitemapindex>"
+                    f.write(end)
+                    f.close()
+                    filecounter = filecounter+1
+                    file_name = "static/sitemap/sitemap"+str(filecounter)+".xml"
+                    counter = 0 
+                    fistline =0
             
 def sitemap1(request):
     top = '''<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//globalpincode.org/main-sitemap.xsl"?>
