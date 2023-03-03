@@ -164,7 +164,7 @@ def search_pincode(request,pincode):
         res = {"errormessage": "Pincode Not Found. Search A Valid Pincode."}
         return render(request,"return.html",res)
 
-def sitemap12122121(request):
+def sitemap22(request):
     res = all_pincodes.objects.order_by().values('Country_Code').distinct()
 
     print(len(res),res[0]["Country_Code"])
@@ -176,13 +176,12 @@ def sitemap12122121(request):
     filecounter= 1
     fistline =0
     file_name = "sitemap"+str(filecounter)+".xml"
-    top = '''<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//toolsband.com/main-sitemap.xsl"?>
-        <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'''
+    top = '<?xml version="1.0" encoding="UTF-8"?>'
 
     for i in (countrylist):
         rest = all_pincodes.objects.filter(Country_Code=i)
         for j in range(len(rest)):
-            url = "https://globalpincode.org/region/"+i+"/"+rest[j].State_Name+"/"+rest[j].District_Name_or_City_Name+"/"+rest[j].District_Name_or_City_Name+"/pincode-or-zipcode"
+            url = "https://globalpincode.org/region/"+i+"/"+rest[j].State_Name.replace("+", " ")+"/"+rest[j].District_Name_or_City_Name.replace("+", " ")+"/"+rest[j].District_Name_or_City_Name.replace("+", " ")+"/pincode-or-zipcode"
 
             text ='''<sitemap>
                         <loc>'''+url+'''</loc>
@@ -206,8 +205,22 @@ def sitemap12122121(request):
                 counter = 0 
                 fistline =0
             
-
+def sitemap1(request):
+    top = '''<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//globalpincode.org/main-sitemap.xsl"?>
+        <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'''
+    text = top
     
-with open(r"/Users/bibekanandabhuyan/Projects/find_code/find_code/sitemap51.xml", 'r') as fp:
-    lines = len(fp.readlines())
-    print('Total Number of lines:', lines)
+    for i in range(1,53):
+        url = "https://globalpincode.org/static/sitemap/sitemap"+str(i)+".xml"
+        text1 ='''<sitemap>
+                        <loc>'''+url+'''</loc>
+                        <lastmod>2023-02-14T06:18:47+00:00</lastmod>
+                    </sitemap>'''
+        
+        text = text+text1
+    text = text+ "</sitemapindex>"
+    return HttpResponse(text)
+    
+# with open(r"/Users/bibekanandabhuyan/Projects/find_code/find_code/sitemap51.xml", 'r') as fp:
+#     lines = len(fp.readlines())
+#     print('Total Number of lines:', lines)
